@@ -1,38 +1,212 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Kalnia:wght@100..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: beige;
+}
+
+svg {
+  margin-right: 10px;
+}
+
+header {
+  font-size: 24px;
+}
+
+header h2 {
+  display: inline;
+}
+
+#root {
+  display: relative;
+}
+
+.Nav {
+  height: 10vh;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Nav ul {
+  list-style: none;
+}
+
+.Nav ul li {
+  display: inline;
+  margin-left: 50px;
+}
+
+.Nav ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+form {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+input[type="text"] {
+  padding: 20px;
+  min-width: 500px;
+  border-radius: 30px;
+  border: 1px solid black;
+  outline: none;
+  background: transparent;
+  color: black;
+}
+
+input[type="submit"] {
+  padding: 20px;
+  border-radius: 30px;
+  font-weight: 600;
+  background: rgba(255, 1, 1, 0.932);
+  color: white;
+  border: 0;
+  cursor: pointer;
+  letter-spacing: 2px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+input[type="submit"]:hover {
+  transform: scale(1.12);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.recipes {
+  width: 90%;
+  margin: 0 auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.recipes h1 {
+  text-align: center;
+  margin: 12px 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.grid > div {
+  background: rgba(255, 255, 255, 0.705);
+  backdrop-filter: blur(5px);
+  height: 500px;
   display: flex;
   flex-direction: column;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.grid img {
+  height: 80%;
+}
+
+.grid > div > * {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.details {
+  width: 90%;
+  margin: 0px auto;
+  line-height: 40px;
+}
+
+.details .speak-contain {
+  display: flex;
+  gap: 50px;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.details .speak-contain button,
+.details .speak-contain span {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  font-size: 2rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.about {
+  width: 70%;
+  margin: 0px auto;
+  margin-top: 40px;
+}
+
+.about div {
+  margin-bottom: 40px;
+}
+
+.about div > * {
+  line-height: 3rem;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: beige;
+}
+
+@media screen and (max-width: 1500px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media screen and (max-width: 1200px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  header {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  header {
+    font-size: 18px;
+  }
+  form {
+    padding: 0 20px;
+  }
+
+  form input[type="text"] {
+    min-width: 0;
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .grid > div {
+    height: 400px;
+  }
+
+  .grid img {
+    height: 70%;
+  }
+
+  form input[type="text"] {
+    min-width: 0;
+    width: 90%;
+  }
+
+  form input[type="submit"] {
+    padding-left: 10px;
+    padding-right: 10px;
+    letter-spacing: 0;
   }
 }
