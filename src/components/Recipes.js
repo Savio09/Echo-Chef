@@ -16,10 +16,19 @@ const Recipes = () => {
       body: JSON.stringify({ query }),
     })
       .then((res) => {
-        return res.json();
+        if (!res.ok) {
+          throw new Error(res.statusText);
+        }
+        return res.text();
       })
       .then((data) => {
-        setRecipe(data);
+        if (data) {
+          const jsonData = JSON.parse(data);
+          setRecipe(jsonData);
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
       });
   };
 

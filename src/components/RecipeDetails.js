@@ -25,15 +25,24 @@ const RecipeDetails = () => {
         body: JSON.stringify({ id }),
       })
         .then((res) => {
-          return res.json();
+          if (!res.ok) {
+            throw new Error(res.statusText);
+          }
+          return res.text();
         })
         .then((data) => {
-          console.log(data);
-          setSteps(data);
-          sessionStorage.setItem(
-            `recipe-${id}`,
-            JSON.stringify({ steps: data })
-          );
+          if (data) {
+            const jsonData = JSON.parse(data);
+            console.log(jsonData);
+            setSteps(jsonData);
+            sessionStorage.setItem(
+              `recipe-${id}`,
+              JSON.stringify({ steps: jsonData })
+            );
+          }
+        })
+        .catch((error) => {
+          console.error("Error:", error);
         });
     }
     return () => {
