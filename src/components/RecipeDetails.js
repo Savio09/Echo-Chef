@@ -6,7 +6,6 @@ const RecipeDetails = () => {
   const [steps, setSteps] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [pauseIcon, setPauseIcon] = useState("play_arrow");
-  const url = `https://api.spoonacular.com/recipes/${id}/analyzedInstructions?query=${id}&apiKey=65091d71afe14738886ff5f79b30d757`;
 
   let synth = window.speechSynthesis;
   let utterance1 = new SpeechSynthesisUtterance();
