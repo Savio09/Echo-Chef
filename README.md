@@ -42,6 +42,6 @@ Contributions are what make the open-source community such an amazing place to l
 
 ## Contact
 
-Your Name - fortune@uni.minerva.edu
+Name - fortune@uni.minerva.edu
 
-Project Link: https://github.com/Savio09/repo_name
+Project Link: https://github.com/Savio09/Echo-chef
