@@ -24,7 +24,9 @@ const RecipeDetails = () => {
         },
         body: JSON.stringify({ id }),
       })
-        .then((res) => res.json())
+        .then((res) => {
+          return res.json();
+        })
         .then((data) => {
           console.log(data);
           setSteps(data);

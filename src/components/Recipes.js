@@ -15,7 +15,9 @@ const Recipes = () => {
       },
       body: JSON.stringify({ query }),
     })
-      .then((res) => res.json())
+      .then((res) => {
+        return res.json();
+      })
       .then((data) => {
         setRecipe(data);
       });
